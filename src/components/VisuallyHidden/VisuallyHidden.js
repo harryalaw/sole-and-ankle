@@ -12,8 +12,10 @@ const VisuallyHidden = ({ children, ...delegated }) => {
         }
       };
 
-      const handleKeyUp = () => {
-        setForceShow(false);
+      const handleKeyUp = (ev) => {
+        if (ev.key === 'Alt') {
+          setForceShow(false);
+        }
       };
 
       window.addEventListener('keydown', handleKeyDown);
